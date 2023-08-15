@@ -118,6 +118,69 @@ deb [trusted=yes] http://192.168.1.101/debina/ ./
 
 > yum install rpm-build
 > echo '$_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
+> mkdir -p ~/rpmbuild/{BUILD, BUILDROOT, RPMS, SOURCES,SPECS,SRPMS}
+> mkdir hello-world-1.0
+> cd hello-world-1.0
+> vim main.c
+> make
+> sudo make install
+> tar zcvf helloworld-1.0.tar.gz hello-world-1.0/
+> cp helloworld-1.0.tar.gz  ~/rpmbuild/SOURCES/
+> vim helloworld.spec>
+> rpm-build -ba helloworld.spec
+
+## snaps
+
+> sudo snap install multipass --classic
+> sudo snap install snapcraft --classic
+
+> git clone https://github.com/snapcraft-docs/offlineimap.git
+> cd offlineimap
+> wget https://snapcraft.io/first-snap/python/snapcraft.yaml
+> snapcraft
+> sudo snap install --devmode --dangerous *.snap
+> snap list
+> test-offlineimap-mysnap -h
+
+
+
+
+> hash -r
+
+## flatpak
+
+
+> sudo apt install flatpak
+
+## appimage
+
+
+> sudo apt install appstream
+
+> git clone https://github.com/boolean-world/appimage-resources
+vim hello-world-appimage/helloworld.desktop
+
+add 
+
+Categories=GNOME;
+
+
+> wget https://github.com/AppImage/AppImageKit/releases/download/contrnuous/apimagetool-x86_64.AppImage
+
+> chmod -x apimagetool-x86_64.AppImage
+
+> ARCH=x86_64  ./appimagetool-x86_64.AppImage hello-world.appimage/
+> ./helloworld-appimage-x86_64.AppImage
+
+
+
+ 
+
+
+
+
+
+
 
 
 
