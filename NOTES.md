@@ -15,6 +15,8 @@
 
 
 > iftop
+> nethogs
+
 
 # monitor Solutions for Linux
 
